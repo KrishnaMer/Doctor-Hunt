@@ -7,6 +7,7 @@
 
 import { StatusBar, useColorScheme } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import './src/i18n/config'; // Initialize i18n
 import SplashScreen from './src/components/SplashScreen';
 
 function App() {

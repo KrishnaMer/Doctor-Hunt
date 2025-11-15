@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   View,
   Text,
@@ -7,10 +7,21 @@ import {
   Image,
   ImageBackground,
 } from 'react-native';
+import { useTranslation } from 'react-i18next';
+import { SUPPORTED_LANGUAGES } from '../i18n/languages';
 
 const { width, height } = Dimensions.get('window');
 
 const SplashScreen: React.FC = () => {
+  const { t, i18n } = useTranslation();
+  const currentLang =
+    SUPPORTED_LANGUAGES[i18n.language as keyof typeof SUPPORTED_LANGUAGES] ||
+    SUPPORTED_LANGUAGES.en;
+  const isRTL = currentLang.isRTL;
+
+  // Uncomment the line below to test Hindi language
+  // useEffect(() => { i18n.changeLanguage('hi'); }, []);
+
   return (
     <ImageBackground
       source={require('../../assets/images/bg.png')}
@@ -18,7 +29,7 @@ const SplashScreen: React.FC = () => {
       resizeMode="cover"
     >
       {/* Main content */}
-      <View style={styles.content}>
+      <View style={[styles.content, isRTL && styles.contentRTL]}>
         {/* Medical Cross Logo */}
         <View style={styles.logoContainer}>
           <Image
@@ -29,7 +40,9 @@ const SplashScreen: React.FC = () => {
         </View>
 
         {/* App Name */}
-        <Text style={styles.appName}>Doctor Hunt</Text>
+        <Text style={[styles.appName, isRTL && styles.appNameRTL]}>
+          {t('splash.appName')}
+        </Text>
       </View>
     </ImageBackground>
   );
@@ -46,6 +59,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  contentRTL: {
+    direction: 'rtl',
+  },
   logoContainer: {
     marginBottom: 24,
   },
@@ -57,8 +73,12 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: '700',
     color: '#222222',
-    fontFamily: 'system',
+    fontFamily: 'Rubik-Bold',
     letterSpacing: 0.5,
+    textAlign: 'center',
+  },
+  appNameRTL: {
+    textAlign: 'right',
   },
 });
 
