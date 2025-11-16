@@ -1,5 +1,22 @@
 {
   "splash": {
     "appName": "Búsqueda de Doctor"
+  },
+  "onboarding": {
+    "skip": "Omitir",
+    "next": "Siguiente",
+    "getStarted": "Comenzar",
+    "screen1": {
+      "title": "Encuentra Doctores de Confianza",
+      "description": "Contrario a la creencia popular, Lorem Ipsum no es simplemente un texto aleatorio. Tiene raíces en una pieza de más de 2000 años de antigüedad."
+    },
+    "screen2": {
+      "title": "Elige los Mejores Doctores",
+      "description": "Contrario a la creencia popular, Lorem Ipsum no es simplemente un texto aleatorio. Tiene raíces en una pieza de más de 2000 años de antigüedad."
+    },
+    "screen3": {
+      "title": "Citas Fáciles",
+      "description": "Contrario a la creencia popular, Lorem Ipsum no es simplemente un texto aleatorio. Tiene raíces en una pieza de más de 2000 años de antigüedad."
+    }
   }
 }

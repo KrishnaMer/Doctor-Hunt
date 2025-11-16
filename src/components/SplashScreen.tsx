@@ -12,15 +12,25 @@ import { SUPPORTED_LANGUAGES } from '../i18n/languages';
 
 const { width, height } = Dimensions.get('window');
 
-const SplashScreen: React.FC = () => {
+interface SplashScreenProps {
+  onComplete: () => void;
+}
+
+const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete }) => {
   const { t, i18n } = useTranslation();
   const currentLang =
     SUPPORTED_LANGUAGES[i18n.language as keyof typeof SUPPORTED_LANGUAGES] ||
     SUPPORTED_LANGUAGES.en;
   const isRTL = currentLang.isRTL;
 
-  // Uncomment the line below to test Hindi language
-  // useEffect(() => { i18n.changeLanguage('hi'); }, []);
+  useEffect(() => {
+    // Show splash screen for 2 seconds, then navigate to onboarding
+    const timer = setTimeout(() => {
+      onComplete();
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, [onComplete]);
 
   return (
     <ImageBackground

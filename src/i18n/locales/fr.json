@@ -1,5 +1,22 @@
 {
   "splash": {
     "appName": "Recherche de Médecin"
+  },
+  "onboarding": {
+    "skip": "Passer",
+    "next": "Suivant",
+    "getStarted": "Commencer",
+    "screen1": {
+      "title": "Trouvez des Médecins de Confiance",
+      "description": "Contrairement à la croyance populaire, Lorem Ipsum n'est pas simplement un texte aléatoire. Il a des racines dans un morceau de plus de 2000 ans."
+    },
+    "screen2": {
+      "title": "Choisissez les Meilleurs Médecins",
+      "description": "Contrairement à la croyance populaire, Lorem Ipsum n'est pas simplement un texte aléatoire. Il a des racines dans un morceau de plus de 2000 ans."
+    },
+    "screen3": {
+      "title": "Rendez-vous Faciles",
+      "description": "Contrairement à la croyance populaire, Lorem Ipsum n'est pas simplement un texte aléatoire. Il a des racines dans un morceau de plus de 2000 ans."
+    }
   }
 }
