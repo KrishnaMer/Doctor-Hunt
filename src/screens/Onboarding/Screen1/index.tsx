@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { useTranslation } from 'react-i18next';
-import { SUPPORTED_LANGUAGES } from '../i18n/languages';
+import { SUPPORTED_LANGUAGES } from '../../../i18n/languages';
 
 const { width, height } = Dimensions.get('window');
 const scale = width / 375; // Base design width (iPhone X)
@@ -19,12 +19,12 @@ const scale = width / 375; // Base design width (iPhone X)
 const responsiveSize = (size: number) => size * Math.min(scale, 1.2);
 const responsiveFontSize = (size: number) => size * Math.min(scale, 1.2);
 
-interface OnboardingScreen2Props {
+interface OnboardingScreen1Props {
   onGetStarted: () => void;
   onSkip: () => void;
 }
 
-const OnboardingScreen2: React.FC<OnboardingScreen2Props> = ({
+const OnboardingScreen1: React.FC<OnboardingScreen1Props> = ({
   onGetStarted,
   onSkip,
 }) => {
@@ -35,11 +35,11 @@ const OnboardingScreen2: React.FC<OnboardingScreen2Props> = ({
   const isRTL = currentLang.isRTL;
 
   // Onboarding image
-  const onboardingImage = require('../../assets/images/onboarging_second.png');
+  const onboardingImage = require('../../../../assets/images/onboarging_first.png');
 
   return (
     <ImageBackground
-      source={require('../../assets/images/bg.png')}
+      source={require('../../../../assets/images/bg.png')}
       style={styles.container}
       resizeMode="cover"
     >
@@ -47,7 +47,7 @@ const OnboardingScreen2: React.FC<OnboardingScreen2Props> = ({
       <View style={styles.screen}>
         {/* Circular Image Container */}
         <View style={styles.imageContainer}>
-          {/* Teal Quarter Circle Overlay - Top Right */}
+          {/* Teal Quarter Circle Overlay */}
           <LinearGradient
             colors={['#0EBE7E', '#07D9AD']}
             start={{ x: 0, y: 0 }}
@@ -66,13 +66,12 @@ const OnboardingScreen2: React.FC<OnboardingScreen2Props> = ({
 
         {/* Title */}
         <Text style={[styles.title, isRTL && styles.titleRTL]}>
-          {t('onboarding.screen2.title')}
+          {t('onboarding.screen1.title')}
         </Text>
 
-        {/* Description */}
         <View style={styles.descriptionContainer}>
           <Text style={[styles.description, isRTL && styles.descriptionRTL]}>
-            {t('onboarding.screen2.description')}
+            {t('onboarding.screen1.description')}
           </Text>
         </View>
       </View>
@@ -119,14 +118,14 @@ const styles = StyleSheet.create({
     position: 'relative',
     alignItems: 'center',
     justifyContent: 'center',
-    maxWidth: width * 0.95,
+    maxWidth: width * 0.9,
   },
   quarterCircle: {
     position: 'absolute',
     top: -(width * 0.5) / 2,
-    right: -(width * 0.8) / 2,
-    width: width * 0.9,
-    height: width * 0.9,
+    left: -(width * 0.5) / 2,
+    width: width * 0.8,
+    height: width * 0.8,
     aspectRatio: 1,
     borderRadius: (width * 0.9) / 2,
     zIndex: 1,
@@ -141,6 +140,7 @@ const styles = StyleSheet.create({
     zIndex: 2,
     elevation: 5,
     shadowColor: '#000',
+    marginTop: width * 0.02,
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.15,
     shadowRadius: 10,
@@ -216,4 +216,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default OnboardingScreen2;
+export default OnboardingScreen1;

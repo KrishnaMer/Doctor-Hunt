@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import OnboardingScreen1 from './OnboardingScreen1';
-import OnboardingScreen2 from './OnboardingScreen2';
-import OnboardingScreen3 from './OnboardingScreen3';
+import OnboardingScreen1 from './Screen1';
+import OnboardingScreen2 from './Screen2';
+import OnboardingScreen3 from './Screen3';
 
 interface OnboardingScreenProps {
   onComplete: () => void;

@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import { useTranslation } from 'react-i18next';
-import { SUPPORTED_LANGUAGES } from '../i18n/languages';
+import { SUPPORTED_LANGUAGES } from '../../../i18n/languages';
 
 const { width, height } = Dimensions.get('window');
 const scale = width / 375; // Base design width (iPhone X)
@@ -35,11 +35,11 @@ const OnboardingScreen3: React.FC<OnboardingScreen3Props> = ({
   const isRTL = currentLang.isRTL;
 
   // Onboarding image
-  const onboardingImage = require('../../assets/images/onboarging_third.png');
+  const onboardingImage = require('../../../../assets/images/onboarging_third.png');
 
   return (
     <ImageBackground
-      source={require('../../assets/images/bg.png')}
+      source={require('../../../../assets/images/bg.png')}
       style={styles.container}
       resizeMode="cover"
     >

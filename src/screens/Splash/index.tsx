@@ -8,7 +8,7 @@ import {
   ImageBackground,
 } from 'react-native';
 import { useTranslation } from 'react-i18next';
-import { SUPPORTED_LANGUAGES } from '../i18n/languages';
+import { SUPPORTED_LANGUAGES } from '../../i18n/languages';
 
 const { width, height } = Dimensions.get('window');
 
@@ -34,7 +34,7 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete }) => {
 
   return (
     <ImageBackground
-      source={require('../../assets/images/bg.png')}
+      source={require('../../../assets/images/bg.png')}
       style={styles.container}
       resizeMode="cover"
     >
@@ -43,7 +43,7 @@ const SplashScreen: React.FC<SplashScreenProps> = ({ onComplete }) => {
         {/* Medical Cross Logo */}
         <View style={styles.logoContainer}>
           <Image
-            source={require('../../assets/images/splash_logo.png')}
+            source={require('../../../assets/images/splash_logo.png')}
             style={styles.logo}
             resizeMode="contain"
           />

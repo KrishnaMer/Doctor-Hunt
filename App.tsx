@@ -9,8 +9,8 @@ import React, { useState } from 'react';
 import { StatusBar, useColorScheme, View, Text } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import './src/i18n/config'; // Initialize i18n
-import SplashScreen from './src/components/SplashScreen';
-import OnboardingScreen from './src/components/OnboardingScreen';
+import SplashScreen from './src/screens/Splash';
+import OnboardingScreen from './src/screens/Onboarding';
 
 type AppState = 'splash' | 'onboarding' | 'main';
 
