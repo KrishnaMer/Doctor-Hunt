@@ -11,6 +11,7 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import './src/i18n/config'; // Initialize i18n
 import SplashScreen from './src/screens/Splash';
 import OnboardingScreen from './src/screens/Onboarding';
+import HomeScreen from './src/screens/Home';
 
 type AppState = 'splash' | 'onboarding' | 'main';
 
@@ -42,13 +43,7 @@ function App() {
           onSkip={handleOnboardingSkip}
         />
       )}
-      {appState === 'main' && (
-        <View
-          style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}
-        >
-          <Text>Main App Screen (Coming Soon)</Text>
-        </View>
-      )}
+      {appState === 'main' && <HomeScreen />}
     </SafeAreaProvider>
   );
 }
